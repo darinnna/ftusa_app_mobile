@@ -1,0 +1,14 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    // Définition du répertoire de construction pour tous les projets
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// Définition de la tâche de nettoyage pour supprimer le répertoire de construction principal
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
